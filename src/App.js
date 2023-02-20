@@ -1,10 +1,23 @@
+import { CommonProvider } from "./contexts/common/commonContext";
+import { CartProvider } from "./contexts/cart/cartContext";
+import Header from "./components/common/Header";
+import RouterRoutes from "./routes/RouterRoutes";
+import Footer from "./components/common/Footer";
+import BackTop from "./components/common/BackTop";
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1>Beat-X</h1>
+      <CommonProvider>
+        <CartProvider>
+          <Header />
+          <RouterRoutes />
+          <Footer />
+          <BackTop />
+        </CartProvider>
+      </CommonProvider>
     </>
   );
-}
+};
 
 export default App;
